@@ -1,5 +1,4 @@
 # ROUND A
-
 # Allocation (5pts, 7pts)
 
 class Case:
@@ -31,7 +30,6 @@ for i in range(1, t+1):
 
 
 # ROUND B
-
 # Bike Tour (5pts, 7pts)
 
 class Case:
@@ -56,4 +54,41 @@ for i in range(1, t+1):
     heights = [int(s) for s in input().split(" ")]
     case = Case(checkpoints, heights)
     print(f'Case #{i}: {case.countPeaks()}')
+
+# ROUND C
+# Countdown (5pts, 7pts)
+
+class Case:
+    def __init__(self, mcount, arr):
+        self.mcount = mcount
+        self.arr = arr
+    
+    def getMcount(self):
+
+        countdowns = 0
+        
+        for idx, i in enumerate(self.arr):
+            if (i==self.mcount) and (idx+self.mcount-1<len(self.arr)) & (self.arr[idx+self.mcount-1]==1):
+                tmparr = self.arr[idx:idx+self.mcount]
+                tmpmcount = 0
+                        
+                for jdx, j in enumerate(tmparr):
+                    if j + jdx == self.mcount:
+                        tmpmcount +=1 
+                    else:
+                        break
+
+                if tmpmcount == self.mcount:
+                    countdowns += 1
+                    tmpmcount = 0
+                
+        return countdowns
+
+
+t = int(input())
+for i in range(t, t+1):
+    arrlen, mcount = [int(s) for s in input().split(" ")]
+    arr = [int(s) for s in input().split(" ")]
+    case = Case(mcount, arr)
+    print(f'Case #{i}: {case.getMcount()}')
     
