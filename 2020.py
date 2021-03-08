@@ -130,3 +130,61 @@ for k in range(1, t+1):
 # ROUND E
 # Longest Arithmetic (4pts, 7pts)
 
+class Case:
+    def __init__(self, length, arr):
+        self.length = length
+        self.arr = arr
+    
+    def longestArr(self):
+        tmparr = [self.arr[0], self.arr[1]]
+        longestarr = 2
+
+        for idx, i in enumerate(self.arr):
+            if (idx>1):
+                if tmparr[-1]-i == tmparr[-2]-tmparr[-1]:
+                    tmparr.append(i)
+                    if longestarr < len(tmparr):
+                        longestarr = len(tmparr)
+                else:
+                    tmparr = [self.arr[idx-1], i] 
+        
+        return longestarr
+            
+
+T = int(input())
+for t in range(1, T+1):
+    length = int(input())
+    arr = [int(s) for s in input().split(" ")]
+    case = Case(length, arr)
+    print(f'Case #{t}: {case.longestArr()}')
+
+# Round F
+# ATM Queue
+
+class Case:
+    def __init__(self, people, maxamt, amounts):
+        self.people = people
+        self.maxamt = maxamt
+        self.amounts = amounts
+
+    def getOrder(self):
+        
+        order = {}
+        
+        for idx, i in enumerate(self.amounts):
+            if divmod(i, self.maxamt)[1]>0:
+                order[idx+1] = divmod(i, self.maxamt)[0] + 1
+            else:
+                order[idx+1] = divmod(i, self.maxamt)[0]
+        
+        order = {k:v for k, v in sorted(order.items(), key=lambda item: item[1])}
+        order = [s for s in order.keys()]
+        order = ' '.join(str(i) for i in order)
+        return order
+
+T = int(input())
+for t in range(1, T+1):
+    people, maxamt = [int(s) for s in input().split(" ")]
+    amounts = [int(s) for s in input().split(" ")]
+    case = Case(people, maxamt, amounts)
+    print(f'Case #{t}: {case.getOrder()}')
