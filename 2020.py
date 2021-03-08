@@ -57,6 +57,7 @@ for i in range(1, t+1):
 
 # ROUND C
 # Countdown (5pts, 7pts)
+### DO NOT USE CLASS. Function from 2020_old works without Runtime error.
 
 class Case:
     def __init__(self, mcount, arr):
@@ -86,9 +87,8 @@ class Case:
 
 
 t = int(input())
-for i in range(t, t+1):
+for i in range(1, t+1):
     arrlen, mcount = [int(s) for s in input().split(" ")]
     arr = [int(s) for s in input().split(" ")]
     case = Case(mcount, arr)
     print(f'Case #{i}: {case.getMcount()}')
-    
