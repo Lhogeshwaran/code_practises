@@ -92,3 +92,37 @@ for i in range(1, t+1):
     arr = [int(s) for s in input().split(" ")]
     case = Case(mcount, arr)
     print(f'Case #{i}: {case.getMcount()}')
+
+# ROUND D
+# Record Breaket (4pts, 8pts)
+
+class Case:
+    def __init__(self, days, visitors):
+        self.days = days
+        self.visitors = visitors
+        
+    def checkPeak(self):
+        peakdays = 0
+        if self.visitors[0]==self.visitors[1]:
+            maxvis = self.visitors[0]
+        else:
+            maxvis = self.visitors[0]-1
+        
+        for idx, i in enumerate(self.visitors):
+            if (idx<(self.days-1)):
+                if (i>maxvis) & (i>self.visitors[idx+1]):
+                    maxvis = i
+                    peakdays += 1
+                    
+            elif (i>maxvis):
+                peakdays += 1
+        
+        return peakdays
+
+
+t = int(input())
+for k in range(1, t+1):
+    days = int(input())
+    visitors = [int(s) for s in input().split(" ")]
+    case = Case(days, visitors)
+    print(f'Case #{k}: {case.checkPeak()}')
