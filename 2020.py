@@ -94,7 +94,7 @@ for i in range(1, t+1):
     print(f'Case #{i}: {case.getMcount()}')
 
 # ROUND D
-# Record Breaket (4pts, 8pts)
+# Record Breaker (4pts, 8pts)
 
 class Case:
     def __init__(self, days, visitors):
@@ -126,3 +126,7 @@ for k in range(1, t+1):
     visitors = [int(s) for s in input().split(" ")]
     case = Case(days, visitors)
     print(f'Case #{k}: {case.checkPeak()}')
+
+# ROUND E
+# Longest Arithmetic (4pts, 7pts)
+
