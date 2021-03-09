@@ -193,3 +193,27 @@ for t in range(1, T+1):
 # Round G
 # Kick_Start (4pts, 7pts)
 
+class Case:
+    def __init__(self, string):
+        self.string = string
+    
+    def luckyStrings(self):
+        kicks = 0
+        luckystrings = 0
+        
+        for idx, i in enumerate(self.string):
+            if (i=='K') & (idx<len(self.string)-3):
+                if (self.string[idx+1]=='I') & (self.string[idx+2]=='C') & (self.string[idx+3]=='K'):
+                    kicks += 1
+            elif (i=='S') & (idx<len(self.string)-4):
+                if (self.string[idx+1]=='T') & (self.string[idx+2]=='A') & (self.string[idx+3]=='R') & (self.string[idx+4]=='T'):
+                    luckystrings += kicks
+
+        return luckystrings
+
+
+T = int(input())
+for t in range(1, T+1):
+    string = str(input())
+    case = Case(string)
+    print(f'Case #{t}: {case.luckyStrings()}')
