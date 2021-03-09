@@ -20,7 +20,7 @@ class Case:
             
         return can_buy
             
-            
+
 t = int(input())
 for i in range(1, t+1):
     for_sale, budget = [int(s) for s in input().split(" ")]
@@ -159,7 +159,7 @@ for t in range(1, T+1):
     print(f'Case #{t}: {case.longestArr()}')
 
 # Round F
-# ATM Queue
+# ATM Queue (4pts, 7pts)
 
 class Case:
     def __init__(self, people, maxamt, amounts):
@@ -182,9 +182,14 @@ class Case:
         order = ' '.join(str(i) for i in order)
         return order
 
+
 T = int(input())
 for t in range(1, T+1):
     people, maxamt = [int(s) for s in input().split(" ")]
     amounts = [int(s) for s in input().split(" ")]
     case = Case(people, maxamt, amounts)
     print(f'Case #{t}: {case.getOrder()}')
+
+# Round G
+# Kick_Start (4pts, 7pts)
+
