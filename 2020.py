@@ -217,3 +217,27 @@ for t in range(1, T+1):
     string = str(input())
     case = Case(string)
     print(f'Case #{t}: {case.luckyStrings()}')
+
+# Round H
+# Retype (4pts, 7pts)
+
+class Case:
+    def __init__(self, total, current, sword):
+        self.total = total
+        self.current = current
+        self.sword = sword
+        
+    def findBest(self):
+        fromfirst = self.current + self.total
+        fromsword = self.current + self.current - self.sword + self.total - self.sword
+        
+        if fromfirst < fromsword:
+            return fromfirst
+        return fromsword
+
+
+T = int(input())
+for t in range(1, T+1):
+    total, current, sword = [int(s) for s in input().split(" ")]
+    case = Case(total, current, sword)
+    print(f'Case {t}: {case.findBest()}')
