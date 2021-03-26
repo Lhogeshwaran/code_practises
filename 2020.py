@@ -241,3 +241,32 @@ for t in range(1, T+1):
     total, current, sword = [int(s) for s in input().split(" ")]
     case = Case(total, current, sword)
     print(f'Case {t}: {case.findBest()}')
+
+
+# Round A
+# Plates (9pts, 15pts)
+
+T = int(input())
+for t in range(1, T+1):
+    nstacks, kplates, pplates = [int(s) for s in input().split(" ")]
+    stacks = []
+    for i in range(0, nstacks):
+        stacks.append([int(j) for j in input().split(" ")])
+
+stacks_dict = {}
+for idx, i in enumerate(stacks):
+    stacks_dict[idx] = []
+    for jdx, j in enumerate(i):
+        if jdx==0:
+            stacks_dict[idx].append(j)
+        else:
+            stacks_dict[idx].append(j+stacks_dict[idx][jdx-1])
+
+ls = []
+for idx, (i, j) in enumerate(zip(stacks[0], stacks[1])):
+    if i>j:
+        ls.append[ls[:-1]]
+        ls.append(stacks[0][:idx+1])
+    else:
+        ls.append[ls[:-1]]
+        ls.append(stacks[1][:idx+1])

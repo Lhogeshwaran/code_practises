@@ -113,3 +113,43 @@ def hourglassSum(arr):
                     arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2])
             
     return max(sum)
+
+
+def solve(meal_cost, tip_percent, tax_percent):
+    
+    tip = (tip_percent/100) * meal_cost
+    tax = (tax_percent/100) * meal_cost
+
+    total = int(round((meal_cost + tip + tax), 0))
+
+    print(total)
+
+solve(13.00, 20, 8)
+
+
+def wierdCheck(N):
+    
+    if (N%2 != 0) or ((N%2 == 0) & (N in range(6, 21))):
+        return 'Weird'
+    
+    return 'Not Weird'
+
+N = 2503243243244325543500
+%timeit wierdCheck(2503243243244325543500)
+
+
+class Case:
+    def __init__(self, arr):
+        self.arr = arr
+        
+    def printReverse(self):
+        print(*self.arr[::-1])
+
+Case(arr).printReverse()
+
+
+# Binary Numbers
+n = int(input())
+ans = max(bin(n)[2:].split('0')).count('1')
+print(ans)
+
