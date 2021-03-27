@@ -153,3 +153,61 @@ n = int(input())
 ans = max(bin(n)[2:].split('0')).count('1')
 print(ans)
 
+
+# Rotate arrays
+d = 4
+a = [1, 2, 3, 4, 5]
+
+def rotLeft(a, d):
+    for i in range(d):
+        a.append(a.pop(0))
+    return a
+
+rotLeft(a, d)
+
+# Bribes
+bribes = 0
+for idx, i in enumerate(q):
+    if i-idx > :
+        print('Too chaotic.')
+    elif i-idx==1 or i-idx==2:
+        bribes += 1
+
+def minimumBribes(q):
+
+    chaoticTrue = 0
+    bribes = 0
+    
+    for idx, i in enumerate(q, start=1):
+        if i-idx > 2:
+            chaoticTrue = 1
+            break
+        elif (i!=idx) & (i>idx):
+            bribes += i-idx
+            
+    if chaoticTrue!=1:
+        print(bribes)
+    else:
+        print('Too chaotic')
+
+## UNDERSTAND THIS AGAIN
+def minimumBribes(Q):
+
+    moves = 0
+
+    for idx, i in enumerate(Q, 1):
+
+        if i - idx > 2:
+            print("Too chaotic")
+            return
+
+        for j in range(max(i-2, 0), idx):
+
+
+            if Q[j] > i:
+                moves += 1
+
+    print(moves)
+
+Q = [1, 2, 5, 3, 7, 8, 6, 4]
+minimumBribes(Q)
