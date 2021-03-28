@@ -1,7 +1,7 @@
 # ROUND A
 # Allocation (5pts, 7pts)
 
-class Case:
+class Allocation:
     def __init__(self, for_sale, budget, cost):
         self.for_sale = for_sale
         self.budget = budget
@@ -25,14 +25,14 @@ t = int(input())
 for i in range(1, t+1):
     for_sale, budget = [int(s) for s in input().split(" ")]
     cost = [int(s) for s in input().split(" ")]
-    case = Case(for_sale, budget, cost)
+    case = Allocation(for_sale, budget, cost)
     print(f'Case #{i}: {case.buyHouse()}')
 
 
 # ROUND B
 # Bike Tour (5pts, 7pts)
 
-class Case:
+class BikeTour:
     def __init__(self, checkpoints, heights):
         self.checkpoints = checkpoints
         self.heights = heights
@@ -52,14 +52,14 @@ t = int(input())
 for i in range(1, t+1):
     checkpoints = int(input())
     heights = [int(s) for s in input().split(" ")]
-    case = Case(checkpoints, heights)
+    case = BikeTour(checkpoints, heights)
     print(f'Case #{i}: {case.countPeaks()}')
 
 # ROUND C
 # Countdown (5pts, 7pts)
 ### DO NOT USE CLASS. Function from 2020_old works without Runtime error.
 
-class Case:
+class Countdown:
     def __init__(self, mcount, arr):
         self.mcount = mcount
         self.arr = arr
@@ -90,13 +90,13 @@ t = int(input())
 for i in range(1, t+1):
     arrlen, mcount = [int(s) for s in input().split(" ")]
     arr = [int(s) for s in input().split(" ")]
-    case = Case(mcount, arr)
+    case = Countdown(mcount, arr)
     print(f'Case #{i}: {case.getMcount()}')
 
 # ROUND D
 # Record Breaker (4pts, 8pts)
 
-class Case:
+class RecordBreaker:
     def __init__(self, days, visitors):
         self.days = days
         self.visitors = visitors
@@ -124,13 +124,13 @@ t = int(input())
 for k in range(1, t+1):
     days = int(input())
     visitors = [int(s) for s in input().split(" ")]
-    case = Case(days, visitors)
+    case = RecordBreaker(days, visitors)
     print(f'Case #{k}: {case.checkPeak()}')
 
 # ROUND E
 # Longest Arithmetic (4pts, 7pts)
 
-class Case:
+class LongestArithmetio:
     def __init__(self, length, arr):
         self.length = length
         self.arr = arr
@@ -155,13 +155,13 @@ T = int(input())
 for t in range(1, T+1):
     length = int(input())
     arr = [int(s) for s in input().split(" ")]
-    case = Case(length, arr)
+    case = LongestArithmetio(length, arr)
     print(f'Case #{t}: {case.longestArr()}')
 
 # Round F
 # ATM Queue (4pts, 7pts)
 
-class Case:
+class AtmQueue:
     def __init__(self, people, maxamt, amounts):
         self.people = people
         self.maxamt = maxamt
@@ -187,13 +187,13 @@ T = int(input())
 for t in range(1, T+1):
     people, maxamt = [int(s) for s in input().split(" ")]
     amounts = [int(s) for s in input().split(" ")]
-    case = Case(people, maxamt, amounts)
+    case = AtmQueue(people, maxamt, amounts)
     print(f'Case #{t}: {case.getOrder()}')
 
 # Round G
 # Kick_Start (4pts, 7pts)
 
-class Case:
+class KickStart:
     def __init__(self, string):
         self.string = string
     
@@ -215,13 +215,13 @@ class Case:
 T = int(input())
 for t in range(1, T+1):
     string = str(input())
-    case = Case(string)
+    case = KickStart(string)
     print(f'Case #{t}: {case.luckyStrings()}')
 
 # Round H
 # Retype (4pts, 7pts)
 
-class Case:
+class Retype:
     def __init__(self, total, current, sword):
         self.total = total
         self.current = current
@@ -239,7 +239,7 @@ class Case:
 T = int(input())
 for t in range(1, T+1):
     total, current, sword = [int(s) for s in input().split(" ")]
-    case = Case(total, current, sword)
+    case = Retype(total, current, sword)
     print(f'Case {t}: {case.findBest()}')
 
 
@@ -262,6 +262,7 @@ for idx, i in enumerate(stacks):
         else:
             stacks_dict[idx].append(j+stacks_dict[idx][jdx-1])
 
+'''
 ls = []
 for idx, (i, j) in enumerate(zip(stacks[0], stacks[1])):
     if i>j:
@@ -270,3 +271,4 @@ for idx, (i, j) in enumerate(zip(stacks[0], stacks[1])):
     else:
         ls.append[ls[:-1]]
         ls.append(stacks[1][:idx+1])
+'''

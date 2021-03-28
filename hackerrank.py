@@ -63,7 +63,7 @@ def jumpingOnClouds(c):
 
 
 ## Best solution
-def jumpingOnClouds(c):
+def jumpingOnClouds2(c):
 
     if len(c) == 1: 
         return 0
@@ -135,7 +135,7 @@ def wierdCheck(N):
     return 'Not Weird'
 
 N = 2503243243244325543500
-%timeit wierdCheck(2503243243244325543500)
+#%timeit wierdCheck(2503243243244325543500)
 
 
 class Case:
@@ -145,6 +145,7 @@ class Case:
     def printReverse(self):
         print(*self.arr[::-1])
 
+arr = 'ThIS IS CHECK'
 Case(arr).printReverse()
 
 
@@ -166,30 +167,6 @@ def rotLeft(a, d):
 rotLeft(a, d)
 
 # Bribes
-bribes = 0
-for idx, i in enumerate(q):
-    if i-idx > :
-        print('Too chaotic.')
-    elif i-idx==1 or i-idx==2:
-        bribes += 1
-
-def minimumBribes(q):
-
-    chaoticTrue = 0
-    bribes = 0
-    
-    for idx, i in enumerate(q, start=1):
-        if i-idx > 2:
-            chaoticTrue = 1
-            break
-        elif (i!=idx) & (i>idx):
-            bribes += i-idx
-            
-    if chaoticTrue!=1:
-        print(bribes)
-    else:
-        print('Too chaotic')
-
 ## UNDERSTAND THIS AGAIN
 def minimumBribes(Q):
 
@@ -211,3 +188,10 @@ def minimumBribes(Q):
 
 Q = [1, 2, 5, 3, 7, 8, 6, 4]
 minimumBribes(Q)
+
+## RECURSION
+def fibonacci(n):
+    
+    return n if n in [0,1] else fibonacci(n-1) + fibonacci(n-2)
+
+fibonacci(6)
