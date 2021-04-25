@@ -130,7 +130,7 @@ for k in range(1, t+1):
 # ROUND E
 # Longest Arithmetic (4pts, 7pts)
 
-class LongestArithmetio:
+class LongestArithmetic:
     def __init__(self, length, arr):
         self.length = length
         self.arr = arr

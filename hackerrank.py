@@ -195,3 +195,21 @@ def fibonacci(n):
     return n if n in [0,1] else fibonacci(n-1) + fibonacci(n-2)
 
 fibonacci(6)
+
+# SORTING
+arr = [7, 1, 3, 2, 4, 5, 6]
+
+for idx, i in enumerate(arr):
+
+    diff = 0
+    if i > arr[idx+1]:
+        if i - arr[idx+1] == -1:
+            arr[idx] = arr[idx+1]
+            arr[idx+1] = i
+            continue
+        elif i - arr[idx+1] > -1:
+            diff = i - arr[idx+1]
+            if arr[idx+1] < arr[idx+2]:
+                pass
+            elif arr[idx+1] > arr[idx+2]:
+                if diff > arr[idx+1] - arr[idx+1]
