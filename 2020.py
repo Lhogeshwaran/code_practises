@@ -272,3 +272,29 @@ for idx, (i, j) in enumerate(zip(stacks[0], stacks[1])):
         ls.append[ls[:-1]]
         ls.append(stacks[1][:idx+1])
 '''
+
+# ROUND A
+# Plates (9pts, 15pts)
+
+class AllocationNew:
+
+    def __init__(self, for_sale, budget, cost):
+        
+        self.for_sale = for_sale
+        self.budget = budget
+        self.cost = cost
+
+    def buyHouse2(self):
+
+        self.cost = (s for s in sorted(self.cost) if s<=self.budget)
+        
+        can_buy = 0
+        
+        for i in self.cost:
+            if self.budget - i >= 0:
+                self.budget -= i
+                can_buy += 1
+            else:
+                break
+            
+        return can_buy
