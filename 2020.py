@@ -5,10 +5,10 @@ class Allocation:
     def __init__(self, for_sale, budget, cost):
         self.for_sale = for_sale
         self.budget = budget
-        self.cost = cost
+        self.cost = (s for s in sorted(cost) if s<=self.budget)
         
     def buyHouse(self):
-        self.cost = (s for s in sorted(self.cost) if s<=self.budget)
+
         can_buy = 0
         
         for i in self.cost:
@@ -20,7 +20,6 @@ class Allocation:
             
         return can_buy
             
-
 t = int(input())
 for i in range(1, t+1):
     for_sale, budget = [int(s) for s in input().split(" ")]
